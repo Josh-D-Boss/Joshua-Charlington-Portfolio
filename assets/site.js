@@ -6,7 +6,7 @@ n.innerHTML='<span class="mono">JC</span><a class="brand" href="index.html">Josh
 '<div class="dd"><button aria-haspopup="true">Portfolio <i class="ri-arrow-down-s-line"></i></button><div class="menu">'+
 ['designs:Designs','videos:Videos','websites:Websites'].map(function(x){x=x.split(':');return '<a href="gallery.html?type='+x[0]+'">'+x[1]+'</a>'}).join('')+'</div></div>'+
 a('contact.html','Contact','contact')+'<button class="tg" aria-label="Toggle theme"><i class="ri-moon-line"></i></button><button class="burger" aria-label="Menu"><i class="ri-menu-line"></i></button>';
-b.insertBefore(n,b.firstChild);
+b.insertBefore(n,b.firstChild);if(p=='gallery')n.querySelector('.dd>button').className='on';
 function set(t){b.classList.remove('light-mode','dark-mode');b.classList.add(t+'-mode');n.querySelector('.tg i').className=t=='dark'?'ri-sun-line':'ri-moon-line'}
 var s;try{s=localStorage.getItem('theme')}catch(e){}set(s||'light');
 n.querySelector('.tg').onclick=function(){var t=b.classList.contains('light-mode')?'dark':'light';set(t);try{localStorage.setItem('theme',t)}catch(e){}};
